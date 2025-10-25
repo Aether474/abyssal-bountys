@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beneath the Abyss</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+/* General Styles */
+body {
+  font-family: 'Share Tech Mono', monospace;
+  margin: 0;
+  background: #0a001f;
+  color: white;
+  overflow: hidden;
+}
+h1,h2,h3 { font-weight: bold; }
+
+/* Glitch effect */
+.glitch { position: relative; font-size: 4rem; text-transform: uppercase; }
+.glitch::before, .glitch::after { content: attr(data-text); position: absolute; left: 0; }
+.glitch::before { animation: glitchTop 2s infinite linear alternate-reverse; clip: rect(0,9999px,50%,0); color:#ff003c; }
+.glitch::after { animation: glitchBottom 2s infinite linear alternate-reverse; clip: rect(50%,9999px,100%,0); color:#9b5de5; }
+@keyframes glitchTop {0%{transform:translate(0,-2px);}20%{transform:translate(-2px,0);}40%{transform:translate(2px,-2px);}60%{transform:translate(-2px,-1px);}80%{transform:translate(2px,1px);}100%{transform:translate(0,0);}}
+@keyframes glitchBottom {0%{transform:translate(0,2px);}20%{transform:translate(2px,0);}40%{transform:translate(-2px,2px);}60%{transform:translate(2px,1px);}80%{transform:translate(-2px,-1px);}100%{transform:translate(0,0);}}
+
+/* Particle Code */
+#particles { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background: #0a001f; }
+.code {
+  position: absolute;
+  font-family: 'Share Tech Mono', monospace;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 0.25;
+  white-space: pre;
+  pointer-events: none;
+  text-shadow: 0 0 2px #9b5de5, 0 0 4px #ff003c, 0 0 6px #ffffff;
+}
+
+/* Tab Bar */
+.tab-bar {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(90deg, rgba(10,0,31,0.35), rgba(75,15,92,0.35), rgba(255,0,60,0.35), rgba(10,0,31,0.35));
+  padding: 0.5rem 0;
+  border-bottom: 2px solid rgba(255,0,60,0.4);
+  box-shadow: 0 4px 15px rgba(255,0,60,0.25);
+}
+.tab-btn {
+  padding: 1rem 2rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  color: #ccc;
+}
+.tab-btn.active { border-color: #ff003c; color: #ff003c; }
+.tab-btn:hover {
+  color: #9b5de5;
+  transform: scale(1.05);
+  text-shadow: 0 0 10px #ff003c, 0 0 20px #9b5de5;
+}
+
+/* Sections */
+.section {
+  width: 100%;
+  min-height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  text-align: center;
+  overflow-y: auto;
+  background: rgba(27,0,51,0.8);
+}
+.section.home { background: linear-gradient(120deg, #0a001f, #4b0f5c, #0a001f); animation: gradientShift 8s ease infinite; background-size: 400% 400%; }
+.section.active { display: flex; }
+
+.button { background: #ff003c; padding: 1rem 2rem; border-radius: 0.5rem; font-weight: bold; transition: 0.3s; }
+.button:hover { background: #9b5de5; cursor: pointer; }
+.card { background: rgba(27,0,51,0.4); border: 1px solid #ff003c; border-radius: 1rem; padding: 2rem; transition: 0.3s; margin: 1rem; }
+.card:hover { box-shadow: 0 0 25px #ff003c; transform: scale(1.05); }
+
+@keyframes gradientShift {0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+</style>
+</head>
+<body>
+
+<div id="particles"></div>
+
+<!-- TAB NAV -->
+<div class="tab-bar">
+  <div class="tab-btn active" data-tab="home">Home</div>
+  <div class="tab-btn" data-tab="about">About</div>
+  <div class="tab-btn" data-tab="operations">Operations</div>
+  <div class="tab-btn" data-tab="creed">Creed</div>
+  <div class="tab-btn" data-tab="mission">Mission</div>
+  <div class="tab-btn" data-tab="bounties">Completed Bounties</div>
+</div>
+
+<!-- SECTIONS -->
+<section id="home" class="section active home">
+  <h1 class="glitch mb-6" data-text="BENEATH THE ABYSS">BENEATH THE ABYSS</h1>
+  <p class="text-gray-300 text-xl mb-8 max-w-2xl">We navigate the shadows of cyberspace, uncovering what lies beneath. Every crack, every secret, every layer — we see it.</p>
+</section>
+
+<section id="about" class="section">
+  <h2 class="text-4xl mb-6 border-b-4 border-red-700 inline-block">Who We Are</h2>
+  <p class="text-gray-300 text-lg max-w-3xl leading-relaxed mb-6">
+    Beneath the Abyss is a clandestine collective exploring the shadows of cyberspace. We expose hidden vulnerabilities, understand digital systems, and protect what lies unseen.
+  </p>
+</section>
+
+<section id="operations" class="section">
+  <h2 class="text-4xl mb-12 border-b-4 border-red-700 inline-block">Operations</h2>
+  <div class="flex flex-wrap justify-center max-w-6xl">
+    <div class="card"><h3 class="text-xl mb-2">Silent Recon</h3><p>Map hidden layers of systems without detection.</p></div>
+    <div class="card"><h3 class="text-xl mb-2">System Breach</h3><p>Authorized intrusions executed with precision to expose vulnerabilities.</p></div>
+    <div class="card"><h3 class="text-xl mb-2">Threat Research</h3><p>Track exploits, zero-days, and emerging threats before they surface.</p></div>
+    <div class="card"><h3 class="text-xl mb-2">Digital Forensics</h3><p>Analyze breaches, secure systems, and strengthen defenses.</p></div>
+  </div>
+</section>
+
+<section id="creed" class="section">
+  <h2 class="text-4xl mb-6 border-b-4 border-purple-700 inline-block">Our Creed</h2>
+  <p class="text-gray-400 max-w-3xl leading-relaxed text-lg">
+    In the shadows, we find clarity.<br>
+    In the cracks, we find opportunity.<br>
+    We descend not for destruction, but for understanding.<br>
+    The abyss guides us; we guide the world from it.
+  </p>
+</section>
+
+<section id="mission" class="section">
+  <h2 class="text-4xl mb-6 border-b-4 border-red-700 inline-block">Our Mission</h2>
+  <p class="text-gray-300 max-w-3xl leading-relaxed text-lg">
+    To explore hidden systems ethically, uncover vulnerabilities, and document the abyss responsibly.  
+    Knowledge is the weapon; discretion is the shield.
+  </p>
+</section>
+
+<section id="bounties" class="section">
+  <h2 class="text-4xl mb-6 border-b-4 border-purple-700 inline-block">Completed Bounties</h2>
+  <p class="text-gray-400 text-lg max-w-3xl leading-relaxed">
+    No bounties have been completed yet. This section will showcase our achievements once we begin our descents into the digital abyss.
+  </p>
+</section>
+
+<footer class="section bg-purple-900/50 text-gray-400 text-center">
+  &copy; 2025 Beneath the Abyss | In the shadows, we find clarity.
+  <div class="mt-4">
+    <a href="#" class="mx-2 text-red-600 hover:text-white">Discord</a> | 
+    <a href="#" class="mx-2 text-red-600 hover:text-white">GitHub</a> | 
+    <a href="#" class="mx-2 text-red-600 hover:text-white">Twitter</a>
+  </div>
+</footer>
+
+<script>
+// Tab switch logic
+const tabs = document.querySelectorAll(".tab-btn");
+const sections = document.querySelectorAll(".section");
+function switchTab(tabName){
+  sections.forEach(sec => sec.classList.remove("active"));
+  document.getElementById(tabName).classList.add("active");
+  tabs.forEach(t => t.classList.remove("active"));
+  document.querySelector(`.tab-btn[data-tab="${tabName}"]`).classList.add("active");
+}
+tabs.forEach(tab => { tab.addEventListener("click", () => switchTab(tab.dataset.tab)); });
+
+// Falling code particles
+const particlesContainer = document.getElementById("particles");
+const chars = "01{}[]<>;/\\$%&@#*";
+const colors = ["#ff003c", "#9b5de5", "#ffffff"];
+
+function createParticles(){
+  particlesContainer.innerHTML = "";
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  for(let i = 0; i < 250; i++){
+    const span = document.createElement("div");
+    span.className = "code";
+    span.innerText = chars[Math.floor(Math.random()*chars.length)];
+    span.style.left = Math.random() * width + "px";
+    span.style.top = Math.random() * height + "px";
+    span.speed = 0.5 + Math.random()*4;
+    span.style.color = colors[Math.floor(Math.random()*colors.length)];
+    span.style.fontSize = (12 + Math.random()*8) + "px";
+    span.style.textShadow = `0 0 ${2 + Math.random()*6}px ${span.style.color}`;
+    particlesContainer.appendChild(span);
+  }
+}
+createParticles();
+
+function animateParticles(){
+  const codes = document.getElementsByClassName("code");
+  for(let i=0;i<codes.length;i++){
+    let top = parseFloat(codes[i].style.top);
+    top += codes[i].speed;
+    if(top > window.innerHeight) top = -10;
+    codes[i].style.top = top + "px";
+  }
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+window.addEventListener('resize', createParticles);
+</script>
+
+</body>
+</html>
