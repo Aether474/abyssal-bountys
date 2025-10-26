@@ -48,42 +48,6 @@ body {
   pointer-events: none;
 }
 
-/* 🔮 Glitch Text */
-.glitch {
-  position: relative;
-  font-size: 4rem;
-  text-transform: uppercase;
-}
-.glitch::before, .glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-}
-.glitch::before {
-  animation: glitchTop 2s infinite linear alternate-reverse;
-  clip: rect(0,9999px,50%,0);
-  color: #ff003c;
-}
-.glitch::after {
-  animation: glitchBottom 2s infinite linear alternate-reverse;
-  clip: rect(50%,9999px,100%,0);
-  color: #9b5de5;
-}
-@keyframes glitchTop {
-  0%,100% { transform: translate(0,0); }
-  20% { transform: translate(-2px,-2px); }
-  40% { transform: translate(2px,0); }
-  60% { transform: translate(-1px,2px); }
-  80% { transform: translate(1px,-1px); }
-}
-@keyframes glitchBottom {
-  0%,100% { transform: translate(0,0); }
-  20% { transform: translate(2px,2px); }
-  40% { transform: translate(-2px,1px); }
-  60% { transform: translate(1px,-2px); }
-  80% { transform: translate(-1px,1px); }
-}
-
 /* 🧬 Particles */
 #particles { 
   position: fixed; 
@@ -171,6 +135,18 @@ body {
   100%{background-position:0% 50%;}
 }
 
+/* 🕳️ Abyss Title */
+#abyss-title {
+  color: #ffffff;
+  letter-spacing: 4px;
+  text-shadow:
+    0 2px 6px rgba(255, 0, 60, 0.4),
+    0 4px 12px rgba(155, 93, 229, 0.3),
+    0 6px 18px rgba(255, 255, 255, 0.2);
+  transition: transform 0.1s ease-out;
+  perspective: 800px;
+}
+
 /* Cards */
 .card {
   background:rgba(27,0,51,0.4);
@@ -192,7 +168,7 @@ body {
   .tab-bar { display: none; }
   .mobile-nav-toggle { display: flex; }
   .mobile-menu.open { display: flex; }
-  .glitch { font-size: 2.5rem; }
+  #abyss-title { font-size: 2.5rem; }
   .section { padding: 1rem; }
   .card { width: 100%; }
 }
@@ -204,11 +180,8 @@ body {
 <div id="fog-overlay"></div>
 <div id="particles"></div>
 
-<!-- 🔝 NAVIGATION -->
 <div class="nav-container">
-  <div class="mobile-nav-toggle text-xl text-red-500 font-bold">
-    ☰ Menu
-  </div>
+  <div class="mobile-nav-toggle text-xl text-red-500 font-bold">☰ Menu</div>
   <div class="tab-bar">
     <div class="tab-btn active" data-tab="home">Home</div>
     <div class="tab-btn" data-tab="about">About</div>
@@ -229,12 +202,13 @@ body {
   </div>
 </div>
 
-<!-- 🌌 SECTIONS -->
 <section id="home" class="section active home">
-  <h1 class="glitch mb-6 text-center" data-text="BENEATH THE ABYSS">BENEATH THE ABYSS</h1>
+  <h1 id="abyss-title" class="mb-6 text-center text-6xl font-extrabold relative uppercase">
+    BENEATH THE ABYSS
+  </h1>
   <p class="text-gray-300 text-xl mb-8 max-w-2xl">
     We navigate the shadows of cyberspace, uncovering what lies beneath.<br>
-    Every crack, every secret, every layer — we see it.
+    Every crack, every secret, every layer.
   </p>
 </section>
 
@@ -280,7 +254,6 @@ body {
   </p>
 </section>
 
-<!-- 🔥 UPDATED SUPPORT SECTION -->
 <section id="support" class="section">
   <h2 class="text-4xl mb-6 border-b-4 border-red-700 inline-block">Contact Support</h2>
   <p class="text-gray-300 text-lg max-w-2xl mb-6">
@@ -297,7 +270,6 @@ body {
 </footer>
 
 <script>
-// Navigation Tabs
 const tabs = document.querySelectorAll(".tab-btn");
 const sections = document.querySelectorAll(".section");
 const mobileMenu = document.querySelector(".mobile-menu");
@@ -314,7 +286,6 @@ function switchTab(tabName){
 tabs.forEach(tab=>tab.addEventListener("click",()=>switchTab(tab.dataset.tab)));
 toggleBtn.addEventListener("click",()=>mobileMenu.classList.toggle("open"));
 
-// Particles
 const particlesContainer = document.getElementById("particles");
 const chars = "01{}[]<>;/\\$%&@#*";
 const colors = ["#ff003c", "#9b5de5", "#ffffff"];
@@ -330,7 +301,7 @@ function createParticles() {
     span.style.top = Math.random() * window.innerHeight + "px";
     span.style.fontSize = (10 + Math.random() * 10) + "px";
     span.style.color = colors[Math.floor(Math.random() * colors.length)];
-    span.speed = 0.5 + Math.random() * 1.5;
+    span.speed = 0.2 + Math.random() * 0.5; // reduced speed
     particlesContainer.appendChild(span);
   }
 }
@@ -347,6 +318,41 @@ function animateParticles() {
 createParticles();
 animateParticles();
 window.addEventListener("resize", createParticles);
+
+// Subtle parallax for #abyss-title
+const abyssTitle = document.getElementById("abyss-title");
+let tiltX = 0, tiltY = 0, currentX = 0, currentY = 0;
+
+document.addEventListener("mousemove", (e) => {
+  const rect = abyssTitle.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+  const deltaX = e.clientX - centerX;
+  const deltaY = e.clientY - centerY;
+
+  tiltX = (deltaY / rect.height) * 1.2; // smaller tilt
+  tiltY = -(deltaX / rect.width) * 1.2;
+});
+
+function updateTilt() {
+  currentX += (tiltX - currentX) * 0.08;
+  currentY += (tiltY - currentY) * 0.08;
+
+  const intensity = Math.sqrt(currentX ** 2 + currentY ** 2) / 3;
+  const fogGlow = `
+    0 0 4px rgba(255, 0, 60, ${0.25 + intensity * 0.05}),
+    0 0 10px rgba(155, 93, 229, ${0.2 + intensity * 0.05}),
+    0 0 18px rgba(255, 255, 255, ${0.08 + intensity * 0.03})
+  `;
+
+  abyssTitle.style.transform = `rotateX(${currentX}deg) rotateY(${currentY}deg)`;
+  abyssTitle.style.textShadow = fogGlow;
+
+  requestAnimationFrame(updateTilt);
+}
+updateTilt();
+
+document.addEventListener("mouseleave", () => { tiltX = 0; tiltY = 0; });
 </script>
 </body>
 </html>
