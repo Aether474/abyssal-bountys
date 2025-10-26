@@ -39,7 +39,6 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* 🔮 Extra glow overlay for ambient haze */
 #fog-overlay {
   position: fixed;
   inset: 0;
@@ -189,9 +188,27 @@ body::before {
   100%{background-position:0% 50%;}
 }
 
+/* --- 📱 Responsive Fixes --- */
 @media (max-width: 768px) {
+  body { padding-top: 4rem; }
   .glitch { font-size: 2.5rem; }
-  .tab-btn { padding: 0.5rem 1rem; font-size: 0.9rem; }
+  .section { padding: 1rem; text-align: center; }
+  .tab-bar {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+  }
+  .tab-btn {
+    flex: 1 1 45%;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  .card {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
 }
 </style>
 </head>
@@ -209,6 +226,7 @@ body::before {
   <div class="tab-btn" data-tab="creed">Creed</div>
   <div class="tab-btn" data-tab="mission">Mission</div>
   <div class="tab-btn" data-tab="bounties">Completed Bounties</div>
+  <div class="tab-btn" data-tab="support">Support</div>
 </div>
 
 <!-- SECTIONS -->
@@ -259,6 +277,18 @@ body::before {
   </p>
 </section>
 
+<!-- 📨 SUPPORT SECTION -->
+<section id="support" class="section">
+  <h2 class="text-4xl mb-6 border-b-4 border-red-700 inline-block">Contact Support</h2>
+  <p class="text-gray-300 text-lg max-w-2xl mb-6">
+    If you need help, reach out to our support team — we’ll respond as soon as possible.
+  </p>
+  <a href="mailto:abyssal-support@abyssal-bountys.org"
+     class="text-red-500 text-xl hover:text-white transition">
+     abyssal-support@abyssal-bountys.org
+  </a>
+</section>
+
 <footer class="section bg-purple-900/50 text-gray-400 text-center">
   &copy; 2025 Beneath the Abyss | In the shadows, we find clarity.
   <div class="mt-4">
@@ -280,7 +310,7 @@ function switchTab(tabName){
 }
 tabs.forEach(tab=>{ tab.addEventListener("click",()=>switchTab(tab.dataset.tab)); });
 
-/* 🌌 Fully dynamic particle system */
+/* 🌌 Particle system */
 const particlesContainer = document.getElementById("particles");
 const chars = "01{}[]<>;/\\$%&@#*";
 const colors = ["#ff003c", "#9b5de5", "#ffffff"];
@@ -329,7 +359,7 @@ window.addEventListener("resize", () => {
   resizeTimeout = setTimeout(createParticles, 200);
 });
 
-/* 🖱️ Mouse pressure glow effect */
+/* 🖱️ Cursor glow */
 document.addEventListener("mousemove", (e) => {
   document.body.style.setProperty("--cursor-x", e.clientX + "px");
   document.body.style.setProperty("--cursor-y", e.clientY + "px");
