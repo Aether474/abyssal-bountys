@@ -187,20 +187,6 @@ body {
   box-shadow: 0 0 30px rgba(255,0,60,0.8), 0 0 60px rgba(155,93,229,0.6);
 }
 
-/* Cursor Glow */
-#cursor-glow {
-  position: fixed;
-  top: 0; left: 0;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,0,60,0.15), rgba(155,93,229,0.05), transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-  mix-blend-mode: screen;
-  transition: transform 0.1s ease-out;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .tab-bar { display: none; }
@@ -217,7 +203,6 @@ body {
 <div id="fog"></div>
 <div id="fog-overlay"></div>
 <div id="particles"></div>
-<div id="cursor-glow"></div>
 
 <!-- 🔝 NAVIGATION -->
 <div class="nav-container">
@@ -295,14 +280,14 @@ body {
   </p>
 </section>
 
+<!-- 🔥 UPDATED SUPPORT SECTION -->
 <section id="support" class="section">
   <h2 class="text-4xl mb-6 border-b-4 border-red-700 inline-block">Contact Support</h2>
   <p class="text-gray-300 text-lg max-w-2xl mb-6">
-    Have a suggestion, found something interesting, or want us to look into something specific?  
-    Reach out to the Abyssal Support team — we’re always listening.
+    Found something to look into, got any questions or maybe just want to contact us. You can find us at
   </p>
   <a href="mailto:abyssal-support@abyssal-bountys.org"
-     class="text-red-500 text-xl hover:text-white transition">
+     class="text-red-500 text-xl transition hover:text-white hover:shadow-[0_0_10px_#ff003c,0_0_20px_#9b5de5]">
      abyssal-support@abyssal-bountys.org
   </a>
 </section>
@@ -362,12 +347,6 @@ function animateParticles() {
 createParticles();
 animateParticles();
 window.addEventListener("resize", createParticles);
-
-// Cursor Glow
-const glow = document.getElementById("cursor-glow");
-document.addEventListener("mousemove", (e) => {
-  glow.style.transform = `translate(${e.clientX - 100}px, ${e.clientY - 100}px)`;
-});
 </script>
 </body>
 </html>
