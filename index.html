@@ -5,18 +5,54 @@
     <title>@.envy</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="css/normalize.min.css">
-    <meta name="description" content="L">
-    <meta content="website" property="og:type">
-    <meta content="@.envy | whimper.xyz" property="og:title">
-    <meta content="envy is just envy," property="og:description">
-    <meta content="@.envy | whimper.xyz" name="author">
-    <meta content="#000000" name="theme-color">
-    <meta property="og:image" content="images/6AeoaLXxP.png">
+    
+    <!-- Clean share preview (no old site trace) -->
+    <meta property="og:title" content="@.envy" />
+    <meta property="og:description" content="envy is just envy," />
+    <meta property="og:image" content="https://whimper.xyz/images/6AeoaLXxP.png" />
+    <meta property="og:url" content="https://whimper.xyz" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content=".envy" />
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@.envy">
+    <meta name="twitter:description" content="envy is just envy,">
+    <meta name="twitter:image" content="https://whimper.xyz/images/6AeoaLXxP.png">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="envy is just envy,">
+    <meta name="author" content=".envy">
+
     <link rel="stylesheet" href="css/style.css">
     <script src="js/browser.js"></script>
     <link rel="stylesheet" href="css/all.min.css">
     <script type="module" src="js/cursoreffect.js"></script>
+
+    <!-- BLACK & CRIMSON GRADIENT NAME -->
+    <style>
+        .envy-name {
+            font-weight: 800;
+            font-size: 39.5px;
+            background: linear-gradient(90deg, 
+                #000000 0%, 
+                #8B0000 20%, 
+                #DC143C 50%, 
+                #8B0000 80%, 
+                #000000 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: crimsonFlow 10s ease infinite;
+            text-shadow: 0 0 20px rgba(139, 0, 0, 0.7);
+            letter-spacing: 1px;
+        }
+
+        @keyframes crimsonFlow {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
 </head>
 <body>
     <div class="backgroundimg"></div>
@@ -38,17 +74,14 @@
             </div>
 
             <div class="profile-card__cnt js-profile-cnt">
-                <div class="profile_description">
-                    <div class="profile-card__name" style="font-weight:600;font-size:39.5px">.envy</div>
-                    
-                    <!-- Bio -->
-                    <div style="margin-top: 16px; text-align:center; font-size:18px; color:#fff; text-shadow:0 0 8px #000;">
-                        envy is just envy
+                <div class="profile_description" style="text-align:center;">
+                    <div class="envy-name">.envy</div>
+                    <div style="margin-top:16px; font-size:18px; color:#fff; text-shadow:0 0 8px #000;">
+                        envy is just envy,
                     </div>
                 </div>
 
-                <!-- "who needs that????" stays -->
-                <div class="viewholder" style="margin-top: 30px; text-align:center; font-size:20px; font-weight:700; color:#fff; text-shadow:0 0 10px #000;">
+                <div style="margin-top:32px; font-size:20px; font-weight:700; color:#fff; text-shadow:0 0 12px #000;">
                     who needs that????
                 </div>
             </div>
