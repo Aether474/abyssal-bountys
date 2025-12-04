@@ -1,358 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beneath the Abyss</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-<style>
-body {
-  font-family: 'Share Tech Mono', monospace;
-  margin: 0;
-  background: #0a001f;
-  color: white;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: relative;
-}
+<!DOCTYPE html><html lang="en"><head>
+        <meta charset="UTF-8">
+        <title>@benomat</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <meta data-react-helmet="true" charset="utf-8">
+        <meta name="description" content="L">
+        <meta content="website" property="og:type">
+        <meta content="@benomat | whimper.xyz" property="og:title">
+        <meta content="" property="og:description">
+        <meta content="@benomat | whimper.xyz" name="author">
+        <meta content="#000000" name="theme-color">
+        <meta property="og:image" content="images/6AeoaLXxP.png">
+        <meta name="twitter:card" content="summary_large_image">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/browser.js"></script>
+        <link rel="stylesheet" href="css/all.min.css">
+        <script type="module" src="js/cursoreffect.js"></script>
+    </head>
+    <body>
+        <div class="backgroundimg"></div>
+        <div class="test" id="test">
+            <div class="term skid" id="thingtofade">
+                <span class="nothover">sex is death</span>
+                <span class="hover">
+                <a id="clickythingy">sex is death</a>
+                </span>
+            </div>
+        </div>
+        <script src="js/clickme.js"></script>
+        <audio src="media/okay.mp3" loop="" id="audio"></audio>
+        <div class="wrapper">
+            <script type="module" src="js/discorduser.js"></script>
+            <script type="module" src="js/lanyardClient.js"></script>
+            <div class="profile-card js-profile-card">
+                <div class="profile-card__img">
+                    <img src="images/1256b1e634d7274dd430.png" alt="profile card" id="pfp">
+                    <div class="card-status-offline" id="statusdiv"></div>
+                </div>
+          
+                <div class="profile-card__cnt js-profile-cnt">
+                    <div class="profile_description">
+                      <div class="profile-card__name" style="font-weight:600;font-size:39.5px">benomat</div>
+                      <div class="badges">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="userPage_premium__pQavC" width="1em" height="1em" viewBox="23 32 465 448">
+                            <path fill="currentColor" d="M396.31 32H264l84.19 112.26L396.31 32zm-280.62 0l48.12 112.26L248 32H115.69zM256 74.67L192 160h128l-64-85.33zm166.95-23.61L376.26 160H488L422.95 51.06zm-333.9 0L23 160h112.74L89.05 51.06zM146.68 192H24l222.8 288h.53L146.68 192zm218.64 0L264.67 480h.53L488 192H365.32zm-35.93 0H182.61L256 400l73.39-208z"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="userPage_imageHost__7UrDF" width="1em" height="1em" viewBox="2 2 20 20">
+                            <path fill="currentColor" d="M9.153 5.408C10.42 3.136 11.053 2 12 2c.947 0 1.58 1.136 2.847 3.408l.328.588c.36.646.54.969.82 1.182c.28.213.63.292 1.33.45l.636.144c2.46.557 3.689.835 3.982 1.776c.292.94-.546 1.921-2.223 3.882l-.434.507c-.476.557-.715.836-.822 1.18c-.107.345-.071.717.001 1.46l.066.677c.253 2.617.38 3.925-.386 4.506c-.766.582-1.918.051-4.22-1.009l-.597-.274c-.654-.302-.981-.452-1.328-.452c-.347 0-.674.15-1.329.452l-.595.274c-2.303 1.06-3.455 1.59-4.22 1.01c-.767-.582-.64-1.89-.387-4.507l.066-.676c.072-.744.108-1.116 0-1.46c-.106-.345-.345-.624-.821-1.18l-.434-.508c-1.677-1.96-2.515-2.941-2.223-3.882c.293-.941 1.523-1.22 3.983-1.776l.636-.144c.699-.158 1.048-.237 1.329-.45c.28-.213.46-.536.82-1.182l.328-.588Z"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="userPage_verified__3n7sU" width="1em" height="1em" viewBox="1 1.5 22 21">
+                            <path fill="currentColor" d="m8.6 22.5l-1.9-3.2l-3.6-.8l.35-3.7L1 12l2.45-2.8l-.35-3.7l3.6-.8l1.9-3.2L12 2.95l3.4-1.45l1.9 3.2l3.6.8l-.35 3.7L23 12l-2.45 2.8l.35 3.7l-3.6.8l-1.9 3.2l-3.4-1.45l-3.4 1.45Zm2.35-6.95L16.6 9.9l-1.4-1.45l-4.25 4.25l-2.15-2.1L7.4 12l3.55 3.55Z"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="userPage_serverBooster__8x5Oi" width="1em" height="1em" viewBox="4.99 3 14 18">
+                            <path fill="currentColor" d="M17.66 11.2c-.23-.3-.51-.56-.77-.82c-.67-.6-1.43-1.03-2.07-1.66C13.33 7.26 13 4.85 13.95 3c-.95.23-1.78.75-2.49 1.32c-2.59 2.08-3.61 5.75-2.39 8.9c.04.1.08.2.08.33c0 .22-.15.42-.35.5c-.23.1-.47.04-.66-.12a.58.58 0 0 1-.14-.17c-1.13-1.43-1.31-3.48-.55-5.12C5.78 10 4.87 12.3 5 14.47c.06.5.12 1 .29 1.5c.14.6.41 1.2.71 1.73c1.08 1.73 2.95 2.97 4.96 3.22c2.14.27 4.43-.12 6.07-1.6c1.83-1.66 2.47-4.32 1.53-6.6l-.13-.26c-.21-.46-.77-1.26-.77-1.26m-3.16 6.3c-.28.24-.74.5-1.1.6c-1.12.4-2.24-.16-2.9-.82c1.19-.28 1.9-1.16 2.11-2.05c.17-.8-.15-1.46-.28-2.23c-.12-.74-.1-1.37.17-2.06c.19.38.39.76.63 1.06c.77 1 1.98 1.44 2.24 2.8c.04.14.06.28.06.43c.03.82-.33 1.72-.93 2.27Z"></path>
+                        </svg>
+                      </div>
+                      <p class="ugh"><span class="typed-text"></span><span class="cursor">�</span></p>
+                    </div>
+                    <script src="js/typingeffect.js"></script>
+                    <div class="profile-card-social">
+                      <a href="https://discord.com/users/713113056346898522" target="_blank">
+                        <i class="fab fa-discord profile-card-social__item"></i>
+                      </a>
+                       <a href="https://last.fm/user/bnmt" target="_blank">
+                        <i class="fab fa-lastfm profile-card-social__item"></i>
+                      </a>
+              
+                    </div>
+                    <div class="viewholder">
+                        <i class="fas fa-eye"></i>
+                        <span class="visit-count" id="visit-count">530</span>
+                    </div>
+                    <style>
+                        .userPage_premium__pQavC {
+                            color: #000000!important;
+                            filter: drop-shadow(#000000 0 0 2.5px)!important;
+                        }
+                    </style>
+                                                    </div>
+                                                    <div class="userPage_badgeContainerFlex__ZWUbS">
+                    <style>
+                        .userPage_imageHost__7UrDF {
+                            color: #000000!important;
+                            filter: drop-shadow(#000000 0 0 2.5px)!important;
+                        }
+                    </style>
+                                
+                                                    </div>
+                                                    <div class="userPage_badgeContainerFlex__ZWUbS">
+                    <style>
+                        .userPage_verified__3n7sU {
+                            color: #000000!important;
+                            filter: drop-shadow(#000000 0 0 2.5px)!important;
+                        }
+                    </style>
+                                                        
+                                                    </div>
+                                                    <div class="userPage_badgeContainerFlex__ZWUbS">
+                    <style>
+                        .userPage_serverBooster__8x5Oi {
+                            color: #000000!important;
+                            filter: drop-shadow(#000000 0 0 2.5px)!important;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+        <script src="js/views.js"></script>
+        <script src="js/clipboard.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/audio.js"></script>
+    
 
-/* 🌫️ Fog Background */
-#fog {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  z-index: -3;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(255,0,80,0.25), transparent 70%),
-    radial-gradient(circle at 70% 40%, rgba(155,93,229,0.22), transparent 70%),
-    radial-gradient(circle at 50% 80%, rgba(255,60,160,0.18), transparent 75%),
-    radial-gradient(circle at 40% 60%, rgba(20,0,40,0.6), transparent 90%);
-  background-size: 250% 250%;
-  filter: blur(80px) saturate(140%);
-  animation: fogShift 40s ease-in-out infinite alternate;
-}
-@keyframes fogShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 60%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* ✨ Overlay */
-#fog-overlay {
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(255,0,60,0.05), rgba(155,93,229,0.03), transparent 80%);
-  z-index: -2;
-  pointer-events: none;
-}
-
-/* 🧬 Particles */
-#particles { 
-  position: fixed; 
-  top: 0; left: 0; 
-  width: 100vw; height: 100vh; 
-  z-index: -1; 
-}
-.code {
-  position: absolute;
-  font-family: 'Share Tech Mono', monospace;
-  font-weight: bold;
-  opacity: 0.3;
-  pointer-events: none;
-  text-shadow: 0 0 2px #9b5de5, 0 0 4px #ff003c, 0 0 6px #ffffff;
-}
-
-/* 🌊 Nav Bar */
-.nav-container {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 20;
-  backdrop-filter: blur(6px);
-  background: linear-gradient(90deg, rgba(10,0,31,0.6), rgba(75,15,92,0.5), rgba(255,0,60,0.5), rgba(10,0,31,0.6));
-  border-bottom: 2px solid rgba(255,0,60,0.6);
-  box-shadow: 0 2px 10px rgba(255,0,60,0.5);
-}
-.tab-bar {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding: 0.75rem 0;
-}
-.tab-btn {
-  padding: 0.75rem 2rem;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s ease;
-}
-.tab-btn.active { border-color: #ff003c; color: #ff003c; }
-.tab-btn:hover { color: #9b5de5; transform: scale(1.05); text-shadow: 0 0 10px #ff003c, 0 0 20px #9b5de5; }
-
-/* 📱 Mobile Nav */
-.mobile-nav-toggle {
-  display: none;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  cursor: pointer;
-}
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  background: rgba(10,0,31,0.9);
-  border-top: 1px solid rgba(255,0,60,0.4);
-}
-.mobile-menu .tab-btn {
-  text-align: center;
-  padding: 1rem;
-  border-bottom: 1px solid rgba(255,0,60,0.2);
-}
-
-/* 💫 Sections */
-.section {
-  width:100%;
-  min-height:100vh;
-  display:none;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  padding:2rem;
-  text-align:center;
-  background:rgba(27,0,51,0.7);
-  transition: transform 0.4s ease, background 0.5s ease;
-}
-.section.home {
-  background: linear-gradient(120deg, #0a001f, #4b0f5c, #0a001f);
-  animation: gradientShift 8s ease infinite;
-  background-size:400% 400%;
-}
-.section.active { display:flex; }
-@keyframes gradientShift {
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
-}
-
-/* 🕳️ Abyss Title */
-#abyss-title {
-  color: #ffffff;
-  letter-spacing: 4px;
-  text-shadow:
-    0 2px 6px rgba(255, 0, 60, 0.4),
-    0 4px 12px rgba(155, 93, 229, 0.3),
-    0 6px 18px rgba(255, 255, 255, 0.2);
-  transition: transform 0.1s ease-out;
-  perspective: 800px;
-}
-
-/* Cards */
-.card {
-  background:rgba(27,0,51,0.4);
-  border:1px solid #ff003c;
-  border-radius:1rem;
-  padding:2rem;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.3s ease;
-  margin:1rem;
-  box-shadow: 0 0 10px rgba(255,0,60,0.3);
-}
-.card:hover {
-  transform: translateY(-10px) scale(1.05);
-  border-color: #9b5de5;
-  box-shadow: 0 0 30px rgba(255,0,60,0.8), 0 0 60px rgba(155,93,229,0.6);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .tab-bar { display: none; }
-  .mobile-nav-toggle { display: flex; }
-  .mobile-menu.open { display: flex; }
-  #abyss-title { font-size: 2.5rem; }
-  .section { padding: 1rem; }
-  .card { width: 100%; }
-}
-</style>
-</head>
-<body>
-
-<div id="fog"></div>
-<div id="fog-overlay"></div>
-<div id="particles"></div>
-
-<div class="nav-container">
-  <div class="mobile-nav-toggle text-xl text-red-500 font-bold">☰ Menu</div>
-  <div class="tab-bar">
-    <div class="tab-btn active" data-tab="home">Home</div>
-    <div class="tab-btn" data-tab="about">About</div>
-    <div class="tab-btn" data-tab="operations">Operations</div>
-    <div class="tab-btn" data-tab="creed">Creed</div>
-    <div class="tab-btn" data-tab="mission">Mission</div>
-    <div class="tab-btn" data-tab="bounties">Bounties</div>
-    <div class="tab-btn" data-tab="support">Support</div>
-  </div>
-  <div class="mobile-menu">
-    <div class="tab-btn active" data-tab="home">Home</div>
-    <div class="tab-btn" data-tab="about">About</div>
-    <div class="tab-btn" data-tab="operations">Operations</div>
-    <div class="tab-btn" data-tab="creed">Creed</div>
-    <div class="tab-btn" data-tab="mission">Mission</div>
-    <div class="tab-btn" data-tab="bounties">Bounties</div>
-    <div class="tab-btn" data-tab="support">Support</div>
-  </div>
-</div>
-
-<section id="home" class="section active home">
-  <h1 id="abyss-title" class="mb-6 text-center text-6xl font-extrabold relative uppercase">
-    BENEATH THE ABYSS
-  </h1>
-  <p class="text-gray-300 text-xl mb-8 max-w-2xl">
-    We navigate the shadows of cyberspace, uncovering what lies beneath.<br>
-    Every crack, every secret, every layer.
-  </p>
-</section>
-
-<section id="about" class="section">
-  <h2 class="text-4xl mb-6 border-b-4 border-red-700 inline-block">Who We Are</h2>
-  <p class="text-gray-300 text-lg max-w-3xl leading-relaxed mb-6">
-    Beneath the Abyss is a clandestine collective exploring the shadows of cyberspace. We expose hidden vulnerabilities, understand digital systems, and protect what lies unseen.
-  </p>
-</section>
-
-<section id="operations" class="section">
-  <h2 class="text-4xl mb-12 border-b-4 border-red-700 inline-block">Operations</h2>
-  <div class="flex flex-wrap justify-center max-w-6xl">
-    <div class="card"><h3 class="text-xl mb-2">Silent Recon</h3><p>Map hidden layers of systems without detection.</p></div>
-    <div class="card"><h3 class="text-xl mb-2">System Breach</h3><p>Authorized intrusions executed with precision to expose vulnerabilities.</p></div>
-    <div class="card"><h3 class="text-xl mb-2">Threat Research</h3><p>Track exploits, zero-days, and emerging threats before they surface.</p></div>
-    <div class="card"><h3 class="text-xl mb-2">Digital Forensics</h3><p>Analyze breaches, secure systems, and strengthen defenses.</p></div>
-  </div>
-</section>
-
-<section id="creed" class="section">
-  <h2 class="text-4xl mb-6 border-b-4 border-purple-700 inline-block">Our Creed</h2>
-  <p class="text-gray-400 max-w-3xl leading-relaxed text-lg">
-    In the shadows, we find clarity.<br>
-    In the cracks, we find opportunity.<br>
-    We descend not for destruction, but for understanding.<br>
-    The abyss guides us; we guide the world from it.
-  </p>
-</section>
-
-<section id="mission" class="section">
-  <h2 class="text-4xl mb-6 border-b-4 border-red-700 inline-block">Our Mission</h2>
-  <p class="text-gray-300 max-w-3xl leading-relaxed text-lg">
-    To explore hidden systems ethically, uncover vulnerabilities, and document the abyss responsibly.  
-    Knowledge is the weapon; discretion is the shield.
-  </p>
-</section>
-
-<section id="bounties" class="section">
-  <h2 class="text-4xl mb-6 border-b-4 border-purple-700 inline-block">Completed Bounties</h2>
-  <p class="text-gray-400 text-lg max-w-3xl leading-relaxed">
-    No bounties have been completed yet. This section will showcase our achievements once we begin our descents into the digital abyss.
-  </p>
-</section>
-
-<section id="support" class="section">
-  <h2 class="text-4xl mb-6 border-b-4 border-red-700 inline-block">Contact Support</h2>
-  <p class="text-gray-300 text-lg max-w-2xl mb-6">
-    Found something to look into, got any questions or maybe just want to contact us. You can find us at
-  </p>
-  <a href="mailto:abyssal-support@abyssal-bountys.org"
-     class="text-red-500 text-xl transition hover:text-white hover:shadow-[0_0_10px_#ff003c,0_0_20px_#9b5de5]">
-     abyssal-support@abyssal-bountys.org
-  </a>
-</section>
-
-<footer class="section bg-purple-900/50 text-gray-400 text-center">
-  &copy; 2025 Beneath the Abyss | In the shadows, we find clarity.
-</footer>
-
-<script>
-const tabs = document.querySelectorAll(".tab-btn");
-const sections = document.querySelectorAll(".section");
-const mobileMenu = document.querySelector(".mobile-menu");
-const toggleBtn = document.querySelector(".mobile-nav-toggle");
-
-function switchTab(tabName){
-  sections.forEach(sec=>sec.classList.remove("active"));
-  document.getElementById(tabName).classList.add("active");
-  tabs.forEach(t=>t.classList.remove("active"));
-  document.querySelectorAll(`.tab-btn[data-tab="${tabName}"]`).forEach(t=>t.classList.add("active"));
-  mobileMenu.classList.remove("open");
-}
-
-tabs.forEach(tab=>tab.addEventListener("click",()=>switchTab(tab.dataset.tab)));
-toggleBtn.addEventListener("click",()=>mobileMenu.classList.toggle("open"));
-
-const particlesContainer = document.getElementById("particles");
-const chars = "01{}[]<>;/\\$%&@#*";
-const colors = ["#ff003c", "#9b5de5", "#ffffff"];
-
-function createParticles() {
-  particlesContainer.innerHTML = "";
-  const count = Math.min(400, Math.floor(window.innerWidth * window.innerHeight / 10000));
-  for (let i = 0; i < count; i++) {
-    const span = document.createElement("div");
-    span.className = "code";
-    span.innerText = chars[Math.floor(Math.random() * chars.length)];
-    span.style.left = Math.random() * window.innerWidth + "px";
-    span.style.top = Math.random() * window.innerHeight + "px";
-    span.style.fontSize = (10 + Math.random() * 10) + "px";
-    span.style.color = colors[Math.floor(Math.random() * colors.length)];
-    span.speed = 0.2 + Math.random() * 0.5; // reduced speed
-    particlesContainer.appendChild(span);
-  }
-}
-function animateParticles() {
-  const codes = document.getElementsByClassName("code");
-  for (let i = 0; i < codes.length; i++) {
-    let top = parseFloat(codes[i].style.top);
-    top += codes[i].speed;
-    if (top > window.innerHeight) top = -10;
-    codes[i].style.top = top + "px";
-  }
-  requestAnimationFrame(animateParticles);
-}
-createParticles();
-animateParticles();
-window.addEventListener("resize", createParticles);
-
-// Subtle parallax for #abyss-title
-const abyssTitle = document.getElementById("abyss-title");
-let tiltX = 0, tiltY = 0, currentX = 0, currentY = 0;
-
-document.addEventListener("mousemove", (e) => {
-  const rect = abyssTitle.getBoundingClientRect();
-  const centerX = rect.left + rect.width / 2;
-  const centerY = rect.top + rect.height / 2;
-  const deltaX = e.clientX - centerX;
-  const deltaY = e.clientY - centerY;
-
-  tiltX = (deltaY / rect.height) * 1.2; // smaller tilt
-  tiltY = -(deltaX / rect.width) * 1.2;
-});
-
-function updateTilt() {
-  currentX += (tiltX - currentX) * 0.08;
-  currentY += (tiltY - currentY) * 0.08;
-
-  const intensity = Math.sqrt(currentX ** 2 + currentY ** 2) / 3;
-  const fogGlow = `
-    0 0 4px rgba(255, 0, 60, ${0.25 + intensity * 0.05}),
-    0 0 10px rgba(155, 93, 229, ${0.2 + intensity * 0.05}),
-    0 0 18px rgba(255, 255, 255, ${0.08 + intensity * 0.03})
-  `;
-
-  abyssTitle.style.transform = `rotateX(${currentX}deg) rotateY(${currentY}deg)`;
-  abyssTitle.style.textShadow = fogGlow;
-
-  requestAnimationFrame(updateTilt);
-}
-updateTilt();
-
-document.addEventListener("mouseleave", () => { tiltX = 0; tiltY = 0; });
-</script>
-</body>
-</html>
+</body></html>
