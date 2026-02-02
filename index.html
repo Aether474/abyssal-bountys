@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@.envy</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    
+    <!-- Open Graph / social previews -->
+    <meta property="og:title" content="@.envy" />
+    <meta property="og:description" content="envy is just envy," />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="@.envy" />
+    <!-- If you want the GIF in link previews (Discord/Twitter/etc), point og:image to it -->
+    <!-- <meta property="og:image" content="images/your-actual-gif-here.gif" /> -->
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@.envy">
+    <meta name="twitter:description" content="envy is just envy,">
+
+    <!-- Discord kill switch -->
+    <meta property="discord:card" content="none">
+    <meta property="discord:embed" content="none">
+    <meta name="discord:card" content="none">
+    <meta name="discord:embed" content="none">
+
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="envy is just envy">
+    <meta name="author" content="@.envy">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/browser.js"></script>
+    <link rel="stylesheet" href="css/all.min.css">
+    <script type="module" src="js/cursoreffect.js"></script>
+
+    <style>
+        .envy-name {
+            font-weight: 800;
+            font-size: 39.5px;
+            background: linear-gradient(
+                90deg,
+                #ffccd5 0%,
+                #ff9ab5 25%,
+                #ff6699 50%,
+                #e066a3 75%,
+                #f0f0ff 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: softPinkFlow 12s ease infinite;
+            text-shadow: 0 0 15px rgba(255, 182, 193, 0.6);
+            letter-spacing: 1px;
+        }
+
+        @keyframes softPinkFlow {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .viewholder {
+            position: absolute;
+            bottom: 18px;
+            left: 20px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 0 0 8px #000;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .viewholder i {
+            font-size: 18px;
+        }
+
+        /* Helps GIFs animate properly in some browsers */
+        #pfp {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            image-rendering: -webkit-optimize-contrast;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- VIDEO BACKGROUND -->
+    <div class="backgroundvid">
+        <video autoplay muted loop playsinline>
+            <source src="images/3e31c497-5b11-41db-950f-e84c7afdc59e.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="test" id="test">
+        <div class="term skid" id="thingtofade">
+            <span class="nothover">manipulation is life</span>
+            <span class="hover">
+                <a id="clickythingy">manipulation is life</a>
+            </span>
+        </div>
+    </div>
+
+    <script src="js/clickme.js"></script>
+    <audio src="media/okay.mp3" loop id="audio"></audio>
+
+    <div class="wrapper">
+        <div class="profile-card js-profile-card" style="position:relative;">
+            <div class="profile-card__img">
+                <!-- 
+                    ↓↓↓ CHANGE THIS LINE TO YOUR ACTUAL GIF FILE ↓↓↓
+                    Make sure the file is in the images/ folder
+                -->
+                <img 
+                    src="images/pfp test.jpg" 
+                    alt=".envy profile picture" 
+                    id="pfp"
+                    onerror="this.src='images/1256b1e634d7274dd430.png';"
+                >
+                <!-- 
+                    The onerror fallback shows your old static PNG 
+                    if the GIF cannot be loaded (wrong path, missing file, etc.)
+                -->
+            </div>
+
+            <div class="profile-card__cnt js-profile-cnt" style="text-align:center;">
+                <div class="envy-name">.envy</div>
+                <div style="margin:20px 0 50px; font-size:18px; color:#fff; text-shadow:0 0 8px #000;">
+                    ?:?
+                </div>
+            </div>
+
+            <div class="viewholder">
+                <i class="fas fa-eye"></i>
+                <span>????</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/clipboard.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/audio.js"></script>
+
+</body>
+</html>
